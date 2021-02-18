@@ -15,7 +15,7 @@ addf motion-command-handler   servo-thread
 addf motion-controller        servo-thread
 addf pid.x.do-pid-calcs       servo-thread
 addf pid.y.do-pid-calcs       servo-thread
-addf pid.y2.do-pid-calcs       servo-thread
+addf pid.y2.do-pid-calcs      servo-thread
 addf pid.z.do-pid-calcs       servo-thread
 addf pid.e.do-pid-calcs       servo-thread
 addf pid.s.do-pid-calcs       servo-thread
@@ -24,10 +24,22 @@ addf hm2_7c80.0.write         servo-thread												#<------- changed board
 setp hm2_7c80.0.dpll.01.timer-us -50													#<------- idk, timer
 setp hm2_7c80.0.stepgen.timer-number 1													#<------- idk
 
-# external output signals
+# external output signals --- 8 outputs available
+
+# --- WELDER TRIGGER ---
+net welder     <=  hm2_7c80.0.inmux.00.output-00
+
+# --- ARGON TRIGGER ---
+net argon     <=  hm2_7c80.0.inmux.00.output-01
+
+# --- COOLING PUMP TRIGGER ---
+net cooling-pump     <=  hm2_7c80.0.inmux.00.output-02
+
+# --- COOLING FAN TRIGGER ---
+net cooling-fan     <=  hm2_7c80.0.inmux.00.output-03
 
 
-# external input signals
+# external input signals --- 24 input available
 
 # --- HOME-X ---
 net min-x     <=  hm2_7c80.0.inmux.00.input-00
@@ -41,17 +53,22 @@ net min-y2  <= hm2_7c80.0.inmux.00.input-02
 # --- HOME-Z ---
 net min-z     <=  hm2_7c80.0.inmux.00.input-03
 
-# --- HOME-E ---
-net min-e     <=  hm2_7c80.0.inmux.00.input-04
+# There is no need for E Home :)
 
 # --- ESTOP-EXT ---
-net estop-ext halui.estop.activate <=  hm2_7c80.0.inmux.00.input-05
+net estop-ext halui.estop.activate <=  hm2_7c80.0.inmux.00.input-04
 
 # --- CYCLE-START ---
-net cycle-start     <=  hm2_7c80.0.inmux.00.input-06
+net cycle_start     <=  hm2_7c80.0.inmux.00.input-05
+
+# --- FEED HOLD ---
+net feed_hold     <=  hm2_7c80.0.inmux.00.input-06
+
+# --- STOP ---
+net stop_program       <= hm2_7c80.0.inmux.00.input-07
 
 # --- PROBE-IN ---
-net probe-in     <=  hm2_7c80.0.inmux.00.input-07
+net probe-in     <=  hm2_7c80.0.inmux.00.input-08
 
 
 #*******************
