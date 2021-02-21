@@ -350,22 +350,14 @@ net a-pos-limit     =>  joint.4.pos-lim-sw-in
 #  SPINDLE
 #*******************
 
-setp   pid.s.Pgain     [SPINDLE_0]P
-setp   pid.s.Igain     [SPINDLE_0]I
-setp   pid.s.Dgain     [SPINDLE_0]D
-setp   pid.s.bias      [SPINDLE_0]BIAS
-setp   pid.s.FF0       [SPINDLE_0]FF0
-setp   pid.s.FF1       [SPINDLE_0]FF1
-setp   pid.s.FF2       [SPINDLE_0]FF2
-setp   pid.s.deadband  [SPINDLE_0]DEADBAND
-setp   pid.s.maxoutput [SPINDLE_0]MAX_OUTPUT
-setp   pid.s.error-previous-target true
+setp    hm2_7c80.0.spinout-minlim    [SPINDLE_0]OUTPUT_MIN_LIMIT
+setp    hm2_7c80.0.spinout-maxlim    [SPINDLE_0]OUTPUT_MAX_LIMIT
+setp    hm2_7c80.0.spinout-scalemax  [SPINDLE_0]OUTPUT_SCALE
+setp    hm2_7c80.0.spindir-invert   false
 
-net spindle-index-enable  <=> pid.s.index-enable
-net spindle-enable        =>  pid.s.enable
-net spindle-vel-cmd-rpm     => pid.s.command
-net spindle-vel-fb-rpm      => pid.s.feedback
-net spindle-output        <=  pid.s.output
+net spindle-vel-cmd  => hm2_7c80.0.spinout
+net machine-is-enabled   =>  hm2_7c80.0.spinema
+net spindle-ccw   =>  hm2_7c80.0.spindir
 
 # ---setup spindle control signals---
 
