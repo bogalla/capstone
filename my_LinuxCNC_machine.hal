@@ -53,8 +53,6 @@ net min-y2  <= hm2_7c80.0.inmux.00.input-02
 # --- HOME-Z ---
 net min-z     <=  hm2_7c80.0.inmux.00.input-03
 
-# There is no need for E Home :)
-
 # --- ESTOP-EXT ---
 net estop-ext halui.estop.activate <=  hm2_7c80.0.inmux.00.input-04-not
 
@@ -70,6 +68,18 @@ net stop_program       <= hm2_7c80.0.inmux.00.input-07
 # --- PROBE-IN ---
 net probe-in     <=  hm2_7c80.0.inmux.00.input-08
 
+
+# --- SPINDLE-MANUAL-CW ---
+#net spindle-manual-cw     <=  hm2_7c80.0.gpio.017.in
+
+# --- SPINDLE-MANUAL-CCW ---
+#net spindle-manual-ccw     <=  hm2_7c80.0.gpio.018.in
+
+# --- SPINDLE-MANUAL-STOP ---
+#net spindle-manual-stop     <=  hm2_7c80.0.gpio.019.in
+
+# --- SPINDLE-AT-SPEED ---
+#net spindle-at-speed     <=  hm2_7c80.0.gpio.020.in
 
 #*******************
 #  AXIS X JOINT 0
