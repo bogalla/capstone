@@ -68,19 +68,6 @@ net stop_program       <= hm2_7c80.0.inmux.00.input-07
 # --- PROBE-IN ---
 net probe-in     <=  hm2_7c80.0.inmux.00.input-08
 
-
-# --- SPINDLE-MANUAL-CW ---
-#net spindle-manual-cw     <=  hm2_7c80.0.gpio.017.in
-
-# --- SPINDLE-MANUAL-CCW ---
-#net spindle-manual-ccw     <=  hm2_7c80.0.gpio.018.in
-
-# --- SPINDLE-MANUAL-STOP ---
-#net spindle-manual-stop     <=  hm2_7c80.0.gpio.019.in
-
-# --- SPINDLE-AT-SPEED ---
-#net spindle-at-speed     <=  hm2_7c80.0.gpio.020.in
-
 #*******************
 #  AXIS X JOINT 0
 #*******************
@@ -350,14 +337,33 @@ net a-pos-limit     =>  joint.4.pos-lim-sw-in
 #  SPINDLE
 #*******************
 
+setp   pid.s.Pgain     [SPINDLE_0]P
+setp   pid.s.Igain     [SPINDLE_0]I
+setp   pid.s.Dgain     [SPINDLE_0]D
+setp   pid.s.bias      [SPINDLE_0]BIAS
+setp   pid.s.FF0       [SPINDLE_0]FF0
+setp   pid.s.FF1       [SPINDLE_0]FF1
+setp   pid.s.FF2       [SPINDLE_0]FF2
+setp   pid.s.deadband  [SPINDLE_0]DEADBAND
+setp   pid.s.maxoutput [SPINDLE_0]MAX_OUTPUT
+setp   pid.s.error-previous-target true
+
+net spindle-index-enable  <=> pid.s.index-enable
+net spindle-enable         => pid.s.enable
+net spindle-vel-cmd-rpm    => pid.s.command
+net spindle-vel-fb-rpm     => pid.s.feedback
+net spindle-output        <=  pid.s.output
+
+# ---digital potentionmeter output signals/setup---
 setp    hm2_7c80.0.spinout-minlim    [SPINDLE_0]OUTPUT_MIN_LIMIT
 setp    hm2_7c80.0.spinout-maxlim    [SPINDLE_0]OUTPUT_MAX_LIMIT
 setp    hm2_7c80.0.spinout-scalemax  [SPINDLE_0]OUTPUT_SCALE
-setp    hm2_7c80.0.spindir-invert   false
+setp    hm2_7c80.0.spindir-invert    false
 
-net spindle-vel-cmd  => hm2_7c80.0.spinout
-net machine-is-enabled   =>  hm2_7c80.0.spinema
-net spindle-ccw   =>  hm2_7c80.0.spindir
+net spindle-output      => hm2_7c80.0.spinout
+net spindle-vel-cmd     => hm2_7c80.0.spinout
+net machine-is-enabled  =>  hm2_7c80.0.spinena
+net spindle-ccw         =>  hm2_7c80.0.spindir
 
 # ---setup spindle control signals---
 
@@ -374,10 +380,17 @@ net spindle-at-speed           =>  spindle.0.at-speed
 net spindle-vel-fb-rps         =>  spindle.0.speed-in
 net spindle-index-enable      <=>  spindle.0.index-enable
 
+
+
 # ---Setup spindle at speed signals---
 
 sets spindle-at-speed true
 
+# --- SPINDLE-MANUAL-COMMANDS ---
+#net spindle-manual-cw     <=  hm2_7c80.0.gpio.017.in
+#net spindle-manual-ccw     <=  hm2_7c80.0.gpio.018.in
+#net spindle-manual-stop     <=  hm2_7c80.0.gpio.019.in
+#net spindle-at-speed     <=  hm2_7c80.0.gpio.020.in
 
 #******************************
 # connect miscellaneous signals
