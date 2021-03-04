@@ -1,0 +1,10 @@
+All MAN Pages                   --> http://linuxcnc.org/docs/html/
+
+pwmgen                          --> http://linuxcnc.org/docs/html/man/man9/pwmgen.9.html
+hm2 pwmgen                      --> http://linuxcnc.org/docs/html/man/man9/hostmot2.9.html#pwmgen
+
+
+spindle Control exemples        --> http://linuxcnc.org/docs/html/examples/spindle.html
+Spindle Motion library          --> http://linuxcnc.org/docs/html/man/man9/motion.9.html
+
+MESA 7C80 User Manual           --> http://www.mesanet.com/pdf/parallel/7c80man.pdf
