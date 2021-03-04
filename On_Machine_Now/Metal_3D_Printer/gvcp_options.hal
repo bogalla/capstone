@@ -1,0 +1,21 @@
+# _DO NOT_ include your HAL commands here.
+# Put custom HAL commands in custom_gvcp.hal
+
+# **** Setup of spindle speed display using gladevcp ****
+
+net spindle-vel-cmd-rpm-abs    =>    gladevcp.spindle-speed
+net spindle-at-speed        =>    gladevcp.spindle-at-speed-led
+# **** Setup GLADE MDI buttons ****
+net machine-is-on          =>    gladevcp.button-box-active
+# **** MDI Command 0 - zero-x-axis is specified in the machine named INI file under [HALUI] heading ****
+net MDI-zerox            gladevcp.zero-x          =>  halui.mdi-command-00
+net x-is-homed      =>    gladevcp.zero-x-active
+
+# **** MDI Command 1 - zero-y-axis is specified in the machine named INI file under [HALUI] heading ****
+net MDI-zeroy            gladevcp.zero-y          =>  halui.mdi-command-01
+net y-is-homed      =>    gladevcp.zero-y-active
+
+# **** MDI Command 2 - zero-z-axis is specified in the machine named INI file under [HALUI] heading ****
+net MDI-zeroz            gladevcp.zero-z          =>  halui.mdi-command-02
+net z-is-homed      =>    gladevcp.zero-z-active
+
