@@ -4,4 +4,10 @@
 Include your PyVCP panel here.
 The contents of this file will not be overwritten when you run stepconf again.
 -->
+
+	<vbox>
+		<label>
+		<text>"HELLO"</text>
+		</label>
+	</vbox>
 </pyvcp>
