@@ -8,3 +8,6 @@ spindle Control exemples        --> http://linuxcnc.org/docs/html/examples/spind
 Spindle Motion library          --> http://linuxcnc.org/docs/html/man/man9/motion.9.html
 
 MESA 7C80 User Manual           --> http://www.mesanet.com/pdf/parallel/7c80man.pdf
+
+pyVCP                           --> http://wiki.linuxcnc.org/cgi-bin/wiki.pl?Adding_Custom_MDI_Buttons
+                                --> http://linuxcnc.org/docs/2.4/html/hal_pyvcp.html
