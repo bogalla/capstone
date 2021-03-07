@@ -47,11 +47,12 @@ The contents of this file will not be overwritten when you run stepconf again.
 			<text>"JOG SPEED"</text>
 		</label> 
 		<scale>
-			<halpin>log-speecr</halpin>
+			<halpin>jog-speed</halpin>
 			<orient>HORIZONTAL</orient>
-			<resolution>1</resolution>
-			<min_>1</min_>
-			<max_>60</max_>
+			<resolution>10</resolution>
+			<initval>1000</initval>
+			<min_>50</min_>
+			<max_>2500</max_>
 		</scale>
 	</vbox>
 </pyvcp>
