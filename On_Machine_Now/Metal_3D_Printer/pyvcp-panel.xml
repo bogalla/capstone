@@ -7,7 +7,51 @@ The contents of this file will not be overwritten when you run stepconf again.
 
 	<vbox>
 		<label>
-		<text>"HELLO"</text>
-		</label>
+			<text>"MAIN"</text>
+		</label> 
+	
+		<hbox>
+			<button>
+				<halpin>"x-minus"</halpin>
+				<text>"LEFT-</text>
+			</button> 
+			<button>
+				<halpin>"x-plus"</halpin>
+				<text>"RIGHT"</text>
+			</button> 
+		</hbox> 
+
+		<hbox>
+			<button>
+				<halpin>"y-minus"</halpin>
+				<text>"FORWARD"</text>
+			</button> 
+			<button>
+				<halpin>y-plus"</halpin>
+				<text>"BACK"</text>
+			</button> 
+		</hbox> 
+
+		<hbox>
+			<button>
+				<halpin>"z-minus"</halpin>
+				<text>"DOWN"</text>
+			</button> 
+			<button>
+				<halpin>"z-plus"</halpin>
+				<text>"UP"</text>
+			</button>
+		</hbox> 
+
+		<label>
+			<text>"JOG SPEED"</text>
+		</label> 
+		<scale>
+			<halpin>log-speecr</halpin>
+			<orient>HORIZONTAL</orient>
+			<resolution>1</resolution>
+			<min_>1</min_>
+			<max_>60</max_>
+		</scale>
 	</vbox>
 </pyvcp>
