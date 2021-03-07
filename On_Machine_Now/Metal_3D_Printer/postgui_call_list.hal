@@ -1,5 +1,25 @@
 # These files are loaded post GUI, in the order they appear
 
 source custom_postgui.hal
+sets spindle-at-speed true
 
+# connect the X PyVCP buttons
+net panel-jogxminus     <= halui.axis.0.minus       <= pyvcp.x-minus
+net panel-jogxplus     <= halui.axis.0.plus       <= pyvcp.x-plus
 
+# connect the Y PyVCP buttons
+net panel-jogyminus     <= halui.axis.1.minus       <= pyvcp.y-minus
+net panel-jogyplus     <= halui.axis.1.plus       <= pyvcp.y-plus
+
+# connect the Z PyVCP buttons
+net panel-jogzminus     <= halui.axis.2.minus       <= pyvcp.z-minus
+net panel-jogzplus     <= halui.axis.2.plus       <= pyvcp.z-plus
+
+# connect the A PyVCP buttons
+# net panel-jogaminus     <= halui.axis.3.minus       <= pyvcp.a-minus
+# net panel-jogaplus     <= halui.axis.3.plus       <= pyvcp.a-plus
+
+# connect the PyVCP jog speed slider
+net panel-jogspeed      <= halui.axis.jog-speed     <= pyvcp.jog-speed-f
+
+# potentially add machine on/off? check more in the halui
