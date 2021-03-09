@@ -23,10 +23,10 @@ setp hm2_7c80.0.stepgen.timer-number 1													#<------- idk
 
 # External Output signals --- 8 outputs available
 
-net welder          <=  hm2_7c80.0.ssr.00.out-00    # --- WELDER TRIGGER ---
-net argon           <=  hm2_7c80.0.ssr.00.out-01    # --- ARGON TRIGGER ---
-net cooling-pump    <=  hm2_7c80.0.ssr.00.out-02    # --- COOLING PUMP TRIGGER ---
-net cooling-fan     <=  hm2_7c80.0.ssr.00.out-03    # --- COOLING FAN TRIGGER ---
+# net welder          <=  hm2_7c80.0.ssr.00.out-00    # --- WELDER TRIGGER ---
+# net argon           <=  hm2_7c80.0.ssr.00.out-01    # --- ARGON TRIGGER ---
+# net cooling-pump    <=  hm2_7c80.0.ssr.00.out-02    # --- COOLING PUMP TRIGGER ---
+# net cooling-fan     <=  hm2_7c80.0.ssr.00.out-03    # --- COOLING FAN TRIGGER ---
 
 # External Input signals --- 24 input available
 
@@ -368,18 +368,12 @@ sets spindle-at-speed true
 #  ---HALUI signals---
 
 net axis-select-x  halui.axis.x.select
-net jog-x-pos      halui.axis.x.plus
-net jog-x-neg      halui.axis.x.minus
 net jog-x-analog   halui.axis.x.analog
 net x-is-homed     halui.joint.0.is-homed
 net axis-select-y  halui.axis.y.select
-net jog-y-pos      halui.axis.y.plus
-net jog-y-neg      halui.axis.y.minus
 net jog-y-analog   halui.axis.y.analog
 net y-is-homed     halui.joint.1.is-homed
 net axis-select-z  halui.axis.z.select
-net jog-z-pos      halui.axis.z.plus
-net jog-z-neg      halui.axis.z.minus
 net jog-z-analog   halui.axis.z.analog
 net z-is-homed     halui.joint.2.is-homed
 net axis-select-a  halui.axis.a.select
@@ -393,7 +387,7 @@ net spindle-manual-cw     halui.spindle.0.forward
 net spindle-manual-ccw    halui.spindle.0.reverse
 net spindle-manual-stop   halui.spindle.0.stop
 net machine-is-on         halui.machine.is-on
-net jog-speed             halui.axis.jog-speed
+#net jog-speed             halui.axis.jog-speed
 net MDI-mode              halui.mode.is-mdi
 
 #  ---coolant signals---

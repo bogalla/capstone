@@ -13,7 +13,7 @@ The contents of this file will not be overwritten when you run stepconf again.
 		<hbox>
 			<button>
 				<halpin>"x-minus"</halpin>
-				<text>"LEFT-</text>
+				<text>"LEFT"</text>
 			</button> 
 			<button>
 				<halpin>"x-plus"</halpin>
@@ -27,7 +27,7 @@ The contents of this file will not be overwritten when you run stepconf again.
 				<text>"FORWARD"</text>
 			</button> 
 			<button>
-				<halpin>y-plus"</halpin>
+				<halpin>"y-plus"</halpin>
 				<text>"BACK"</text>
 			</button> 
 		</hbox> 
@@ -47,12 +47,38 @@ The contents of this file will not be overwritten when you run stepconf again.
 			<text>"JOG SPEED"</text>
 		</label> 
 		<scale>
-			<halpin>jog-speed</halpin>
+			<halpin>"jog-speed"</halpin>
 			<orient>HORIZONTAL</orient>
 			<resolution>10</resolution>
 			<initval>1000</initval>
 			<min_>50</min_>
 			<max_>2500</max_>
 		</scale>
+		<hbox>
+			<labelframe text="Welder">
+				<checkbutton>
+					<halpin>"welder"</halpin>
+				</checkbutton>
+			</labelframe>
+		</hbox>
+		<hbox>
+			<labelframe text="Argon">
+				<checkbutton>
+					<halpin>"argon"</halpin>
+				</checkbutton>
+			</labelframe>
+		</hbox>
+		<hbox>
+			<labelframe text="Cooling Pump">
+				<checkbutton>
+					<halpin>"cooling-pump"</halpin>
+				</checkbutton>
+			</labelframe>
+			<labelframe text="Cooling Fan">
+				<checkbutton>
+					<halpin>"cooling-fan"</halpin>
+				</checkbutton>
+			</labelframe>
+		</hbox>
 	</vbox>
 </pyvcp>
