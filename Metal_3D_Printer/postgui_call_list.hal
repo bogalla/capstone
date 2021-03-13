@@ -23,16 +23,15 @@ net jog-z-pos     <= halui.axis.z.plus       <= pyvcp.z-plus
 net jog-speed      <= halui.axis.jog-speed     <= pyvcp.jog-speed-f
 
 # WELDER
-net welder          <=  hm2_7c80.0.ssr.00.out-00	<= pyvcp.welder
+net welder-button           pyvcp.welder        => or2.0.in1
 
 #ARGON
-net argon           <=  hm2_7c80.0.ssr.00.out-01	<= pyvcp.argon
+net argon-button            pyvcp.argon         => or2.1.in1
 
 #COOLING PUMP
-net cooling-pump    <=  hm2_7c80.0.ssr.00.out-02	<= pyvcp.cooling-pump
+net cooling-pump-button     pyvcp.cooling-pump  => or2.2.in1
 
 #COOLING FAN
-net cooling-fan     <=  hm2_7c80.0.ssr.00.out-03	<= pyvcp.cooling-fan		
-
+net cooling-fan-button      pyvcp.cooling-fan   => or2.3.in1
 
 # potentially add machine on/off? check more in the halui
