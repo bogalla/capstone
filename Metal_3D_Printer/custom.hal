@@ -11,13 +11,13 @@ addf or2.1 servo-thread
 addf or2.2 servo-thread 
 addf or2.3 servo-thread 
 
-net welder_gcode        motion.digital-out-00   => or2.0.in0
+net welder-gcode        motion.digital-out-00   => or2.0.in0
 
-net argon_gcode         motion.digital-out-01   => or2.1.in0
+net argon-gcode         motion.digital-out-01   => or2.1.in0
 
-net cooling_pump_gcode  motion.digital-out-02   => or2.2.in0
+net cooling-pump-gcode  motion.digital-out-02   => or2.2.in0
 
-net cooling_fan_gcode   motion.digital-out-03   => or2.3.in0
+net cooling-fan-gcode   motion.digital-out-03   => or2.3.in0
 
 
 net welder          or2.0.out       => hm2_7c80.0.ssr.00.out-00
