@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pyvcp>
+<!-- 
+Include your PyVCP panel here.
+The contents of this file will not be overwritten when you run stepconf again.
+-->
+
+	<vbox>
+		<label>
+			<text>"MAIN"</text>
+		</label> 
+	
+		<hbox>
+			<button>
+				<halpin>"x-minus"</halpin>
+				<text>"LEFT"</text>
+			</button> 
+			<button>
+				<halpin>"x-plus"</halpin>
+				<text>"RIGHT"</text>
+			</button> 
+		</hbox> 
+
+		<hbox>
+			<button>
+				<halpin>"y-minus"</halpin>
+				<text>"FORWARD"</text>
+			</button> 
+			<button>
+				<halpin>"y-plus"</halpin>
+				<text>"BACK"</text>
+			</button> 
+		</hbox> 
+
+		<hbox>
+			<button>
+				<halpin>"z-minus"</halpin>
+				<text>"DOWN"</text>
+			</button> 
+			<button>
+				<halpin>"z-plus"</halpin>
+				<text>"UP"</text>
+			</button>
+		</hbox> 
+
+		<label>
+			<text>"JOG SPEED"</text>
+		</label> 
+		<scale>
+			<halpin>"jog-speed"</halpin>
+			<orient>HORIZONTAL</orient>
+			<resolution>10</resolution>
+			<initval>1000</initval>
+			<min_>50</min_>
+			<max_>2500</max_>
+		</scale>
+		<hbox>
+			<labelframe text="Welder">
+				<checkbutton>
+					<halpin>"welder"</halpin>
+				</checkbutton>
+			</labelframe>
+		</hbox>
+		<hbox>
+			<labelframe text="Argon">
+				<checkbutton>
+					<halpin>"argon"</halpin>
+				</checkbutton>
+			</labelframe>
+		</hbox>
+		<hbox>
+			<labelframe text="Cooling Pump">
+				<checkbutton>
+					<halpin>"cooling-pump"</halpin>
+				</checkbutton>
+			</labelframe>
+			<labelframe text="Cooling Fan">
+				<checkbutton>
+					<halpin>"cooling-fan"</halpin>
+				</checkbutton>
+			</labelframe>
+		</hbox>
+	</vbox>
+</pyvcp>

@@ -1,0 +1,38 @@
+# These files are loaded post GUI, in the order they appear
+
+source custom_postgui.hal
+sets spindle-at-speed true
+
+# connect the X PyVCP buttons
+net jog-x-neg	<= halui.axis.x.minus       <= pyvcp.x-minus
+net jog-x-pos	<= halui.axis.x.plus       <= pyvcp.x-plus
+
+# connect the Y PyVCP buttons
+net jog-y-neg    <= halui.axis.y.minus       <= pyvcp.y-minus
+net jog-y-pos     <= halui.axis.y.plus       <= pyvcp.y-plus
+
+# connect the Z PyVCP buttons
+net jog-z-neg    <= halui.axis.z.minus       <= pyvcp.z-minus
+net jog-z-pos     <= halui.axis.z.plus       <= pyvcp.z-plus
+
+# connect the A PyVCP buttons
+#net panel-jogaminus    <= halui.axis.a.minus       <= pyvcp.a-minus
+#net panel-jogaplus     <= halui.axis.a.plus       <= pyvcp.a-plus
+
+# connect the PyVCP jog speed slider
+net jog-speed      <= halui.axis.jog-speed     <= pyvcp.jog-speed-f
+
+# WELDER
+net welder          <=  hm2_7c80.0.ssr.00.out-00	<= pyvcp.welder
+
+#ARGON
+net argon           <=  hm2_7c80.0.ssr.00.out-01	<= pyvcp.argon
+
+#COOLING PUMP
+net cooling-pump    <=  hm2_7c80.0.ssr.00.out-02	<= pyvcp.cooling-pump
+
+#COOLING FAN
+net cooling-fan     <=  hm2_7c80.0.ssr.00.out-03	<= pyvcp.cooling-fan		
+
+
+# potentially add machine on/off? check more in the halui
